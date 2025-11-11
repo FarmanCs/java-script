@@ -117,13 +117,183 @@
 // console.log(newarray);
 //
 
-const arry = [[1, [2, [3, [4]]]]];
-let newarry = [];
-arry.forEach((arry) => {
-  arry.forEach((ary) => {
-    newarry.push(ary);
-  });
-  newarry.push(arry);
-});
+// let arry = [[1, [2, [3, [4]]]]];
+// let isNested = true;
+// console.log(arry.some(Array.isArray));
+// // while (isNested) {
+// //   let temp = [];
+// //   isNested = false;
 
-console.log(newarry);
+// //   arry.forEach((item) => {
+// //     if (Array.isArray(item)) {
+// //       item.forEach((inner) => temp.push(inner));
+// //       isNested = true;
+// //     } else {
+// //       temp.push(item);
+// //     }
+// //   });
+
+// //   arry = temp;
+// // }
+// while (arry.some(Array.isArray)) {
+//   let temarry = [];
+//   for (let i = 0; i < arry.length; i++) {
+//     if (Array.isArray(arry[i])) {
+//       console.log("true");
+//       for (let j = 0; j < arry[i].length; j++) {
+//         temarry.push(arry[i][j]);
+//       }
+//     } else {
+//       temarry.push(arry[i]);
+//     }
+//   }
+//   arry = temarry;
+// }
+// console.log(arry);
+
+const array = [
+  1,
+  [2, [2, [2, [2, [23, 34]]]], 3],
+  [4, 5, [6, [7, [8], 9, [10, 22], [223]]]],
+  "string data",
+];
+let arry = [];
+
+// console.log(array);
+// console.log("strat", array.flat(Infinity)); //moderen and easy way
+
+let newarry = [...array];
+
+while (newarry.some(Array.isArray)) {
+  newarry = [].concat(...newarry);
+}
+// console.log(newarry);
+
+// array.forEach((value) => {
+//   if (Array.isArray(value)) {
+//     while (Array.isArray(value)) {
+//       value.forEach((val) => {
+//         if (Array.isArray(val)) {
+//           for (let i = 0; i < val.length; i++) {
+//             if (Array.isArray(val[i])) {
+//               if (Array.isArray(val[i])) {
+//                 val[i].forEach((value) => {
+//                   if (Array.isArray(value)) {
+//                     value.forEach((data) => {
+//                       if (Array.isArray(data)) {
+//                         // console.log(data);
+//                         data.forEach((val) => {
+//                           newarry.push(val);
+//                         });
+//                       } else {
+//                         newarry.push(data);
+//                       }
+//                     });
+//                   } else {
+//                     newarry.push(value);
+//                   }
+//                 });
+//               } else {
+//                 newarry.push(val[i]);
+//               }
+//             } else {
+//               newarry.push(val[i]);
+//             }
+//           }
+//         } else {
+//           newarry.push(val);
+//         }
+//       });
+//     }
+
+//     // console.log("arry");
+//   } else if (typeof value === "string") {
+//     newarry.push(value);
+//   } else {
+//     // console.log("numbr");
+//     newarry.push(value);
+//   }
+// });
+// console.log(newarry);
+
+// array.forEach((value) => {
+//   if (Array.isArray(value)) {
+//     value.forEach((val) => {
+//       if (Array.isArray(val)) {
+//         for (let i = 0; i < val.length; i++) {
+//           if (Array.isArray(val[i])) {
+//             if (Array.isArray(val[i])) {
+//               // console.log("Arry check:", val[i]);
+//               val[i].forEach((value) => {
+//                 if (Array.isArray(value)) {
+//                   value.forEach((data) => {
+//                     if (Array.isArray(data)) {
+//                       // console.log(data);
+//                       data.forEach((val) => {
+//                         newarry.push(val);
+//                       });
+//                     } else {
+//                       newarry.push(data);
+//                     }
+//                   });
+//                 } else {
+//                   newarry.push(value);
+//                 }
+//               });
+//             } else {
+//               newarry.push(val[i]);
+//             }
+//           } else {
+//             newarry.push(val[i]);
+//           }
+//         }
+//       } else {
+//         newarry.push(val);
+//       }
+//     });
+//     // console.log("arry");
+//   } else if (typeof value === "string") {
+//     newarry.push(value);
+//   } else {
+//     // console.log("numbr");
+//     newarry.push(value);
+//   }
+// });
+// console.log(newarry);
+
+// function stratarry(arry) {
+//   let newarry = [];
+//   for (let data of arry) {
+//     if (Array.isArray(data)) {
+//       newarry.push(...stratarry(data));
+//     } else {
+//       newarry.push(data);
+//     }
+//   }
+//   return newarry;
+// }
+
+// console.log(stratarry(array));
+
+const deepary = [
+  1,
+  [2, 3],
+  [4, 5, [6, [7, [8], 9, [10, 22], [223]]]],
+  "string data",
+];
+
+// function findNoandStrindArry(arr) {
+//   let count = 0;
+//   for (let val of arr) {
+//     // console.log(val);
+//     if (Array.isArray(val)) {
+//       count += findNoandStrindArry(val);
+//     } else if (typeof val === "number") {
+//       // console.log(val);
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(findNoandStrindArry(deepary));
