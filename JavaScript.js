@@ -297,3 +297,69 @@ const deepary = [
 // }
 
 // console.log(findNoandStrindArry(deepary));
+const a = [10, 90, 100, 34, 3, 33, 34];
+
+let sortArry = [];
+let minval = a[0];
+
+function min(arr) {
+  // Find minimum
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < minval) {
+      minval = arr[i];
+    }
+  }
+
+  // Sort array using bubble sort
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+
+  // Save sorted result
+  sortArry = arr;
+}
+// min(a);
+// console.log("Sorted:", sortArry);
+// console.log("Min value:", minval);
+
+//arry operations
+
+const nums = [4, 8, 9, 940, 0, 7668, 56, 12];
+// Output → 78
+
+let seclrg, largest;
+
+function findSecondlarges(arry) {
+  if (arry[0] > arry[1]) {
+    largest = arry[0];
+    seclrg = [arry[1]];
+  } else {
+    largest = arry[1];
+    seclrg = arry[0];
+  }
+  for (let i = 2; i < arry.length; i++) {
+    let num = arry[i];
+    if (num > largest) {
+      seclrg = largest;
+      largest = num;
+    } else if (num > seclrg) {
+      seclrg = num;
+    }
+  }
+  return seclrg;
+}
+
+// console.log(findSecondlarges(nums));
+
+const arrydata = [3, 5, 6, 3, 6, 9, 10, 3];
+let duplicate = [];
+for (let i = 0; i < arrydata.length; i++) {
+  duplicate.push(arrydata[i]);
+}
+console.log(duplicate);
