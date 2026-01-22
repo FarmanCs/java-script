@@ -431,12 +431,17 @@ findDuplicate(arry)
 function findUnique(arr) {
   const uniqedata = []
   for (let i = 0; i < arr.length; i++) {
-
-    if (arr[i] && (uniqedata[i] !== arr[i] || uniqedata.length === 0)) {
-      uniqedata.push(i)
+    let Repet = false
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] === uniqedata[j]) {
+        Repet = true
+        break
+      }
     }
-    console.log(uniqedata)
-
+    console.log(arr[i])
+    if (!Repet) {
+      uniqedata.push(arr[i])
+    }
   }
 
   return uniqedata
