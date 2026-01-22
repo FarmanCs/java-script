@@ -335,25 +335,25 @@ const nums = [4, 8, 9, 940, 0, 7668, 56, 12];
 
 let seclrg, largest;
 
-function findSecondlarges(arry) {
-  if (arry[0] > arry[1]) {
-    largest = arry[0];
-    seclrg = [arry[1]];
-  } else {
-    largest = arry[1];
-    seclrg = arry[0];
-  }
-  for (let i = 2; i < arry.length; i++) {
-    let num = arry[i];
-    if (num > largest) {
-      seclrg = largest;
-      largest = num;
-    } else if (num > seclrg) {
-      seclrg = num;
-    }
-  }
-  return seclrg;
-}
+// function findSecondlarges(arry) {
+//   if (arry[0] > arry[1]) {
+//     largest = arry[0];
+//     seclrg = [arry[1]];
+//   } else {
+//     largest = arry[1];
+//     seclrg = arry[0];
+//   }
+//   for (let i = 2; i < arry.length; i++) {
+//     let num = arry[i];
+//     if (num > largest) {
+//       seclrg = largest;
+//       largest = num;
+//     } else if (num > seclrg) {
+//       seclrg = num;
+//     }
+//   }
+//   return seclrg;
+// }
 
 // console.log(findSecondlarges(nums));
 
@@ -362,4 +362,50 @@ let duplicate = [];
 for (let i = 0; i < arrydata.length; i++) {
   duplicate.push(arrydata[i]);
 }
-console.log(duplicate);
+// console.log(duplicate);
+const data = [
+  "apple",
+  42,
+  {
+    id: 1,
+    name: "Farman",
+    skills: ["Node.js", "Express", "MongoDB"],
+    profile: {
+      active: true,
+      experience: 3
+    }
+  },
+  [
+    "banana",
+    99,
+    {
+      category: "fruit",
+      prices: [120, 150, 180]
+    }
+  ],
+  {
+    status: "success",
+    codes: [200, 201, 204]
+  }
+  ,{
+test:[2,3]
+  }
+];
+function printNested(value) {
+  if (Array.isArray(value)) {
+    value.forEach(item => printNested(item));
+  } 
+  else if (typeof value === "object" ) {
+    for (const key in value) {
+      // console.log(`${space}${key}:`);
+      // console.log("Key", key, value)
+      printNested(value[key]);
+    }
+  } 
+  else {
+    console.log(`${value}`);
+  }
+}
+
+
+printNested(data)
