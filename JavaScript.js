@@ -151,22 +151,22 @@
 // }
 // console.log(arry);
 
-const array = [
-  1,
-  [2, [2, [2, [2, [23, 34]]]], 3],
-  [4, 5, [6, [7, [8], 9, [10, 22], [223]]]],
-  "string data",
-];
-let arry = [];
+// const array = [
+//   1,
+//   [2, [2, [2, [2, [23, 34]]]], 3],
+//   [4, 5, [6, [7, [8], 9, [10, 22], [223]]]],
+//   "string data",
+// ];
+// let arry = [];
 
 // console.log(array);
 // console.log("strat", array.flat(Infinity)); //moderen and easy way
 
-let newarry = [...array];
+// let newarry = [...array];
 
-while (newarry.some(Array.isArray)) {
-  newarry = [].concat(...newarry);
-}
+// while (newarry.some(Array.isArray)) {
+//   newarry = [].concat(...newarry);
+// }
 // console.log(newarry);
 
 // array.forEach((value) => {
@@ -275,12 +275,12 @@ while (newarry.some(Array.isArray)) {
 
 // console.log(stratarry(array));
 
-const deepary = [
-  1,
-  [2, 3],
-  [4, 5, [6, [7, [8], 9, [10, 22], [223]]]],
-  "string data",
-];
+// const deepary = [
+//   1,
+//   [2, 3],
+//   [4, 5, [6, [7, [8], 9, [10, 22], [223]]]],
+//   "string data",
+// ];
 
 // function findNoandStrindArry(arr) {
 //   let count = 0;
@@ -302,38 +302,38 @@ const a = [10, 90, 100, 34, 3, 33, 34];
 let sortArry = [];
 let minval = a[0];
 
-function min(arr) {
-  // Find minimum
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < minval) {
-      minval = arr[i];
-    }
-  }
+// function min(arr) {
+//   // Find minimum
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < minval) {
+//       minval = arr[i];
+//     }
+//   }
 
-  // Sort array using bubble sort
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
+//   // Sort array using bubble sort
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr.length - i - 1; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//     }
+//   }
 
-  // Save sorted result
-  sortArry = arr;
-}
+//   // Save sorted result
+//   sortArry = arr;
+// }
 // min(a);
 // console.log("Sorted:", sortArry);
 // console.log("Min value:", minval);
 
 //arry operations
 
-const nums = [4, 8, 9, 940, 0, 7668, 56, 12];
-// Output → 78
+// const nums = [4, 8, 9, 940, 0, 7668, 56, 12];
+// // Output → 78
 
-let seclrg, largest;
+// let seclrg, largest;
 
 // function findSecondlarges(arry) {
 //   if (arry[0] > arry[1]) {
@@ -357,55 +357,90 @@ let seclrg, largest;
 
 // console.log(findSecondlarges(nums));
 
-const arrydata = [3, 5, 6, 3, 6, 9, 10, 3];
-let duplicate = [];
-for (let i = 0; i < arrydata.length; i++) {
-  duplicate.push(arrydata[i]);
-}
+// const arrydata = [3, 5, 6, 3, 6, 9, 10, 3];
+// let duplicate = [];
+// for (let i = 0; i < arrydata.length; i++) {
+//   duplicate.push(arrydata[i]);
+// }
 // console.log(duplicate);
-const data = [
-  "apple",
-  42,
-  {
-    id: 1,
-    name: "Farman",
-    skills: ["Node.js", "Express", "MongoDB"],
-    profile: {
-      active: true,
-      experience: 3
+// const data = [
+//   "apple",
+//   42,
+//   {
+//     id: 1,
+//     name: "Farman",
+//     skills: ["Node.js", "Express", "MongoDB"],
+//     profile: {
+//       active: true,
+//       experience: 3
+//     }
+//   },
+//   [
+//     "banana",
+//     99,
+//     {
+//       category: "fruit",
+//       prices: [120, 150, 180]
+//     }
+//   ],
+//   {
+//     status: "success",
+//     codes: [200, 201, 204]
+//   }
+//   , {
+//     test: [2, 3]
+//   }
+// ];
+// function printNested(value) {
+//   if (Array.isArray(value)) {
+//     value.forEach(item => printNested(item));
+//   }
+//   else if (typeof value === "object") {
+//     for (const key in value) {
+//       // console.log(`${space}${key}:`);
+//       // console.log("Key", key, value)
+//       printNested(value[key]);
+//     }
+//   }
+//   else {
+//     console.log(`${value}`);
+//   }
+// }
+
+// printNested(data)
+
+
+
+const arry = [23, 22, 343, 52, 52, 343, 32, 32, 22, 23, 23, 44, 44, 22, 33, 33, 32, 32, 44, 33, 33, 22]
+const duplicatedata = {}
+function findDuplicate(arry) {
+  for (let w of arry) {
+    if (duplicatedata[w]) {
+      duplicatedata[w]++
+    } else {
+      duplicatedata[w] = 1
     }
-  },
-  [
-    "banana",
-    99,
-    {
-      category: "fruit",
-      prices: [120, 150, 180]
-    }
-  ],
-  {
-    status: "success",
-    codes: [200, 201, 204]
   }
-  ,{
-test:[2,3]
-  }
-];
-function printNested(value) {
-  if (Array.isArray(value)) {
-    value.forEach(item => printNested(item));
-  } 
-  else if (typeof value === "object" ) {
-    for (const key in value) {
-      // console.log(`${space}${key}:`);
-      // console.log("Key", key, value)
-      printNested(value[key]);
-    }
-  } 
-  else {
-    console.log(`${value}`);
-  }
+  return duplicatedata
 }
 
+findDuplicate(arry)
+// console.log(duplicatedata)
 
-printNested(data)
+
+function findUnique(arr) {
+  const uniqedata = []
+  for (let i = 0; i < arr.length; i++) {
+
+    if (arr[i] && (uniqedata[i] !== arr[i] || uniqedata.length === 0)) {
+      uniqedata.push(i)
+    }
+    console.log(uniqedata)
+
+  }
+
+  return uniqedata
+}
+console.log(findUnique(arry))
+
+// console.log(arry)s
