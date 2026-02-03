@@ -446,6 +446,28 @@ function findUnique(arr) {
 
   return uniqedata
 }
-console.log(findUnique(arry))
+// console.log(findUnique(arry))
 
 // console.log(arry)s
+
+
+//working with some string methods
+// const str = 'hello'
+// const repeatedStr = str.split('').reverse().join('');
+
+// console.log(repeatedStr)
+
+function strlog(str) {
+  let addstr = '', eventstr = '';
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      eventstr = eventstr + '' + str[i]
+    } else {
+      addstr = addstr + '' + str[i]
+    }
+  }
+  console.log("Even Str:", eventstr)
+  console.log("ADD Str:", addstr)
+}
+
+strlog("testing")
