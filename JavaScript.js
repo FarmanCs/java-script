@@ -425,7 +425,7 @@ function findDuplicate(arry) {
 findDuplicate(arry)
 
 // console.log(duplicatedata)
-console.log([...new Set(arry)])
+// console.log([...new Set(arry)])
 function findUnique(arr) {
   const uniqedata = []
   for (let i = 0; i < arr.length; i++) {
@@ -468,33 +468,58 @@ function findUnique(arr) {
 
 
 // # find pilandorm of a string
-function isPilandrom(str) {
-  let pilandrom = [];
+// function isPilandrom(str) {
+//   let pilandrom = [];
 
-  //to reverse the string and stroe into the arrry.
-  for (let i = str.length - 1; i >= 0; i--) {
-    pilandrom.push(str[i])
-  }
+//   //to reverse the string and stroe into the arrry.
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     pilandrom.push(str[i])
+//   }
 
-  //converty the pilandorom arry into string and compare with the passing string
-  if (pilandrom.join('') === str) {
-    console.log("Pilandrom:", str)
-  } else {
-    console.log("Not a Pilandorm: ", pilandrom.join(''), str)
-  }
+//   //converty the pilandorom arry into string and compare with the passing string
+//   if (pilandrom.join('') === str) {
+//     console.log("Pilandrom:", str)
+//   } else {
+//     console.log("Not a Pilandorm: ", pilandrom.join(''), str)
+//   }
 
-  // this is the same as above via no bult in method call 
-  let pld = '';
-  //reverse the string value and stroe inot annother sting and then compare
-  for (let i = str.length - 1; i >= 0; i--) {
-    pld = pld + str[i]
-  }
-  console.log(pld)
-  if (pld === str) {
-    console.log("The input value is a Pilandrom:", str)
-  } else {
-    console.log("The input value is not a Pilandrom:", str, pld)
-  }
+//   // this is the same as above via no bult in method call 
+//   let pld = '';
+//   //reverse the string value and stroe inot annother sting and then compare
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     pld = pld + str[i]
+//   }
+//   console.log(pld)
+//   if (pld === str) {
+//     console.log("The input value is a Pilandrom:", str)
+//   } else {
+//     console.log("The input value is not a Pilandrom:", str, pld)
+//   }
+
+// }
+// isPilandrom('levelevell')
+
+//find largetst and second largest number in arry;
+
+const arr = [20, 319, 32, 324, 35, 27, 12, 88, 22, 90, 100, 99]
+
+const largest = arr.sort((a, b) => a - b)[arr.length - 1]
+// console.log("largest:", largest)
+
+let largestnum = arr[0], secondlargest = arr[0];
+let temp;
+
+if (largestnum < secondlargest) {
+  [largestnum, secondlargest] = [secondlargest, largestnum]
 
 }
-isPilandrom('levelevell')
+for (let i = 2; i < arr.length; i++) {
+  if (arr[i] > largestnum) {
+    secondlargest = largestnum;
+    largestnum = arr[i]
+  } else if (arr[i] > secondlargest && arr[i] !== largestnum) {
+    secondlargest = arr[i]
+  }
+}
+console.log("largest:", largestnum)
+console.log("second largest:", secondlargest)
