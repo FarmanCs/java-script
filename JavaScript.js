@@ -521,5 +521,54 @@ for (let i = 2; i < arr.length; i++) {
     secondlargest = arr[i]
   }
 }
-console.log("largest:", largestnum)
-console.log("second largest:", secondlargest)
+// console.log("largest:", largestnum)
+// console.log("second largest:", secondlargest)
+
+
+//########################################################
+/*Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the characters in the first string appear somewhere in the second string, without their order changing*/
+
+function issubsequesnce(latter, str) {
+  const lattersFrequency = {};
+  const appearInString = {};
+  for (let i = 0; i < latter.length; i++) {
+    lattersFrequency[latter[i]] = ++lattersFrequency[latter[i]] || 1
+  }
+  for (let j = 0; j < str.length; j++) {
+    appearInString[str[j]] = ++appearInString[str[j]] || 1
+  }
+
+  for (let key in lattersFrequency) {
+    if (!appearInString[key]) {
+      console.log('char is not in the string')
+      return
+    };
+    if (appearInString[key] < lattersFrequency[key]) {
+      console.log('char in the string is less then the latter')
+      return false
+    }
+
+  }
+
+  console.log("latter frequencsy:", lattersFrequency)
+  console.log("Appear in the STring:", appearInString)
+
+}
+
+issubsequesnce('hello', 'hei')
+function isSubsequence(sub, str) {
+  let i = 0; // pointer for sub
+  let j = 0; // pointer for str
+
+  while (j < str.length) {
+    if (sub[i] === str[j]) {
+      i++;
+    }
+    if (i === sub.length) return true;
+    j++;
+  }
+
+  return false;
+}
+console.log(isSubsequence('hello', 'hi and hello')); // true
+console.log(isSubsequence('abc', 'acb')); // false
