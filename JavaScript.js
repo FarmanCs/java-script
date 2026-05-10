@@ -550,12 +550,13 @@ function issubsequesnce(latter, str) {
 
   }
 
-  console.log("latter frequencsy:", lattersFrequency)
-  console.log("Appear in the STring:", appearInString)
+  // console.log("latter frequencsy:", lattersFrequency)
+  // console.log("Appear in the STring:", appearInString)
 
 }
+// issubsequesnce('hello', 'hei')
 
-issubsequesnce('hello', 'hei')
+//same work but diff approach
 function isSubsequence(sub, str) {
   let i = 0; // pointer for sub
   let j = 0; // pointer for str
@@ -570,5 +571,26 @@ function isSubsequence(sub, str) {
 
   return false;
 }
-console.log(isSubsequence('hello', 'hi and hello')); // true
-console.log(isSubsequence('abc', 'acb')); // false
+// console.log(isSubsequence('hello', 'hi and hello')); // true
+// console.log(isSubsequence('abc', 'acb')); // false
+
+
+//________________________________pwer via recursive method------------------------------
+
+
+function powerRecursion(num, power) {
+  if (power === 0) return 1;
+  power--;
+  return num * powerRecursion(num, power)
+}
+
+// console.log(powerRecursion(2, 4))
+
+//================================factorial via recursion=============================
+
+function factorial(num) {
+  if (num === 1) return 1;
+  return num * factorial(num - 1)
+}
+
+console.log(factorial(3))
