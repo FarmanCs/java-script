@@ -361,54 +361,54 @@ let minval = a[0];
 //   duplicate.push(arrydata[i]);
 // }
 // console.log(duplicate);
-// const data = [
-//   "apple",
-//   42,
-//   {
-//     id: 1,
-//     name: "Farman",
-//     skills: ["Node.js", "Express", "MongoDB"],
-//     profile: {
-//       active: true,
-//       experience: 3
-//     }
-//   },
-//   [
-//     "banana",
-//     99,
-//     {
-//       category: "fruit",
-//       prices: [120, 150, 180]
-//     }
-//   ],
-//   {
-//     status: "success",
-//     codes: [200, 201, 204]
-//   }
-//   , {
-//     test: [2, 3]
-//   }
-// ];
-// function printNested(value) {
-//   if (Array.isArray(value)) {
-//     value.forEach(item => printNested(item));
-//   }
-//   else if (typeof value === "object") {
-//     for (const key in value) {
-//       // console.log(`${space}${key}:`);
-//       // console.log("Key", key, value)
-//       printNested(value[key]);
-//     }
-//   }
-//   else {
-//     console.log(`${value}`);
-//   }
-// }
+const data = [
+  "apple",
+  42,
+  {
+    id: 1,
+    name: "Farman",
+    skills: ["Node.js", "Express", "MongoDB"],
+    profile: {
+      active: true,
+      experience: 3
+    }
+  },
+  [
+    "banana",
+    99,
+    {
+      category: "fruit",
+      prices: [120, 150, 180]
+    }
+  ],
+  {
+    status: "success",
+    codes: [200, 201, 204]
+  }
+  , {
+    test: [2, 3]
+  }
+];
+function printNested(value) {
+  if (Array.isArray(value)) {
+    value.forEach(item => printNested(item));
+  }
+  else if (typeof value === "object") {
+    for (const key in value) {
+      // console.log(`${space}${key}:`);
+      // console.log("Key", key, value)
+      printNested(value[key]);
+    }
+  }
+  else {
+    console.log(`${value}`);
+  }
+}
 
 // printNested(data)
 
 
-const arry = [23, 22, 3, 343, 52, 52, 343, 32, 32, 22, 23, 23, 44, 44, 22, 33, 33, 32, 32, 44, 33, 33, 22]
+const arry = [23, 22, 3, 343, 52, 52, 3, 343, 32, 32, 22, 23, 23, 44, 44, 22, 33, 33, 32, 32, 44, 33, 33, 22]
 const duplicatedata = {}
 
 function findDuplicate(arry) {
@@ -452,51 +452,51 @@ function findUnique(arr) {
 // const repeatedStr = str.split('').reverse().join('');
 // console.log(repeatedStr)
 
-// function strlog(str) {
-//   let addstr = '', eventstr = '';
-//   for (let i = 0; i < str.length; i++) {
-//     if (i % 2 === 0) {
-//       eventstr = eventstr + '' + str[i]
-//     } else {
-//       addstr = addstr + '' + str[i]
-//     }
-//   }
-//   console.log("Even Str:", eventstr)
-//   console.log("ADD Str:", addstr)
-// }
+function strlog(str) {
+  let addstr = '', eventstr = '';
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      eventstr = eventstr + '' + str[i]
+    } else {
+      addstr = addstr + '' + str[i]
+    }
+  }
+  console.log("Even Str:", eventstr)
+  console.log("ADD Str:", addstr)
+}
 // strlog("testing")
 
 
 // # find pilandorm of a string
-// function isPilandrom(str) {
-//   let pilandrom = [];
+function isPilandrom(str) {
+  let pilandrom = [];
 
-//   //to reverse the string and stroe into the arrry.
-//   for (let i = str.length - 1; i >= 0; i--) {
-//     pilandrom.push(str[i])
-//   }
+  //to reverse the string and stroe into the arrry.
+  for (let i = str.length - 1; i >= 0; i--) {
+    pilandrom.push(str[i])
+  }
 
-//   //converty the pilandorom arry into string and compare with the passing string
-//   if (pilandrom.join('') === str) {
-//     console.log("Pilandrom:", str)
-//   } else {
-//     console.log("Not a Pilandorm: ", pilandrom.join(''), str)
-//   }
+  //converty the pilandorom arry into string and compare with the passing string
+  if (pilandrom.join('') === str) {
+    console.log("Pilandrom:", str)
+  } else {
+    console.log("Not a Pilandorm: ", pilandrom.join(''), str)
+  }
 
-//   // this is the same as above via no bult in method call 
-//   let pld = '';
-//   //reverse the string value and stroe inot annother sting and then compare
-//   for (let i = str.length - 1; i >= 0; i--) {
-//     pld = pld + str[i]
-//   }
-//   console.log(pld)
-//   if (pld === str) {
-//     console.log("The input value is a Pilandrom:", str)
-//   } else {
-//     console.log("The input value is not a Pilandrom:", str, pld)
-//   }
+  // this is the same as above via no bult in method call 
+  let pld = '';
+  //reverse the string value and stroe inot annother sting and then compare
+  for (let i = str.length - 1; i >= 0; i--) {
+    pld = pld + str[i]
+  }
+  console.log(pld)
+  if (pld === str) {
+    console.log("The input value is a Pilandrom:", str)
+  } else {
+    console.log("The input value is not a Pilandrom:", str, pld)
+  }
 
-// }
+}
 // isPilandrom('levelevell')
 
 //find largetst and second largest number in arry;
@@ -593,4 +593,16 @@ function factorial(num) {
   return num * factorial(num - 1)
 }
 
-console.log(factorial(3))
+// console.log(factorial(6))
+
+//=============================product of arry item =============================
+function productOfArrayItems(arr) {
+  console.log(" productOfArrayItems called with:", arr);
+
+  if (arr.length === 0) return 1;
+
+
+  return arr[0] * productOfArrayItems(arr.slice(1));
+}
+
+console.log("Final Result:", productOfArrayItems([2, 3, 5]));
